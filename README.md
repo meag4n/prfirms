@@ -6,14 +6,13 @@ This is a web scraper I built to scrape PR firms in New York City from the websi
 
 ## What steps did I take to make this?
 
-First, I created a CSV file and wrote its headers with 
+First, I created a CSV file and wrote its headers with
 
 ```
 csvfile = open("firms.csv", "w", newline='', encoding="utf-8")
 c = csv.writer(csvfile)
 
 c.writerow(["name","url","slogan", "rate"])
-
 ```
 
 Next, using the get_firm_details function, I individually scraped:
@@ -66,6 +65,6 @@ for index, item in enumerate(csv_list):
 ```
 
 
-##Problems I encountered
+## Problems I encountered
 
 For the average hourly rate of the PR firm, there were two classes used by the website. "list-item" and "list-item undisclosed" were both used for undisclosed price amounts, so I had to use a try/except function to print "Undisclosed" when the "list-item" class wasn't found. I also didn't anticipate how many firms had undisclosed amounts, which made it a bit harder to analyze how more expensive firms market themselves compared to lower-end firms.
