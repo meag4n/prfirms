@@ -47,7 +47,7 @@ except:
       print("Undisclosed")
 ```
 
-I used the for i range function to repeat the process for each page. The function has an integer range to add a page=number part of each URL, allowing me to scrape all 19 pages.
+For the second function, I used the for i range function to repeat the process for each page. The function has an integer range to add a page=number part of each URL, allowing me to scrape all 19 pages.
 
 ```
 for i in range(19):
@@ -56,14 +56,6 @@ for i in range(19):
     soup = BeautifulSoup(page.text, 'html.parser')
     csv_list = get_firm_details(soup, csv_list)
 ```
-
-The last bit of code prints the items with numbers, so that when you run the code in the command prompt you can easily see its output.
-
-```
-for index, item in enumerate(csv_list):
-    print(index, item)
-```
-
 
 ## Problems I encountered
 

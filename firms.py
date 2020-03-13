@@ -26,7 +26,6 @@ def get_firm_details(soup, csv_list):
             div_list = li.find("div", class_="module-list")
             children = div_list.findAll("div", class_="list-item")
             firm_details_list.append(children[1].text)
-            print(children[1])
         except:
             print("Undisclosed")
 
@@ -39,8 +38,5 @@ for i in range(19):
     page = requests.get(url)
     soup = BeautifulSoup(page.text, 'html.parser')
     csv_list = get_firm_details(soup, csv_list)
-
-for index, item in enumerate(csv_list):
-    print(index, item)
 
 csvfile.close()
